@@ -13,6 +13,10 @@ import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/underline'
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/strikethrough'
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
+import Emoji from '@wwalc/ckeditor5-emoji/src/emoji'
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import Font from '@ckeditor/ckeditor5-font/src/font';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
@@ -35,12 +39,15 @@ export default class ClassicEditor extends ClassicEditorBase {}
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
 	Essentials,
-	UploadAdapter,
 	Autoformat,
 	Bold,
 	Italic,
 	Underline,
 	Strikethrough,
+	Emoji,
+	Alignment,
+	Highlight,
+	Font,
 	BlockQuote,
 	CKFinder,
 	EasyImage,
@@ -69,22 +76,19 @@ ClassicEditor.defaultConfig = {
 			'italic',
 			'underline',
 			'strikethrough',
+			'fontSize',
+			'fontFamily',
+			'fontColor',
+			'highlight',
+			'alignment',
+			'emoji',
 			'link',
 			'bulletedList',
 			'numberedList',
-			'imageUpload',
 			'blockQuote',
 			'insertTable',
 			'undo',
 			'redo'
-		]
-	},
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
 		]
 	},
 	table: {
